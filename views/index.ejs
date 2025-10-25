@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Bug Tracker</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <main>
+    <h1>Bug Tracker</h1>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Bug</th>
+          <th scope="col">Status</th>
+          <th scope="col">Priority</th>
+          <th scope="col">Creation on</th>
+          <th scope="col">Assigned to</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(var i=0; i<bugs.length; i++) {%>
+          <tr>
+            <td hidden>
+              <%= bugs[i]._id %>
+            </td>
+            <td>
+              <%= bugs[i].bug %>
+            </td>
+            <td class="status-<%= bugs[i].status %>">
+              <select name="status" id="status">
+                <option value="opened" <%=bugs[i].status==='opened' ? 'selected' : '' %> >Opened</option>
+                <option value="wip" <%=bugs[i].status==='wip' ? 'selected' : '' %> >Wip</option>
+                <option value="resolved" <%=bugs[i].status==='resolved' ? 'selected' : '' %> >Resolved</option>
+              </select>
+            </td>
+            <td class="priority-<%= bugs[i].priority %>">
+              <select name="priority" id="priority">
+                <option value="low" <%=bugs[i].priority==='low' ? 'selected' : '' %> >Low</option>
+                <option value="medium" <%=bugs[i].priority==='medium' ? 'selected' : '' %> >Medium</option>
+                <option value="high" <%=bugs[i].priority==='high' ? 'selected' :'' %> >High</option>
+              </select>
+            </td>
+            <td>
+              <%= bugs[i].creationDate %>
+            </td>
+            <td>
+              <%= bugs[i].assignedTo %>
+            </td>
+            <td class="delete">
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            </td>
+          </tr>
+          <% } %>
+            <tr>
+              <form action="/bugs" method="POST">
+                <td><input type="text" placeholder="Bug" name="bug" required></td>
+                <td>
+                  <select name="status">
+                    <option value="opened" selected>Opened</option>
+                    <option value="wip">WIP</option>
+                    <option value="resolved">Resolved</option>
+                  </select>
+                </td>
+                <td>
+                  <select name="priority">
+                    <option value="low" selected>Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                  </select>
+                </td>
+                <td>-</td>
+                <td><input type="text" placeholder="Assigned to" name="assigned" required></td>
+                <td><button type="submit">Submit</button></td>
+              </form>
+            </tr>
+      </tbody>
+    </table>
+  </main>
+
+  <script src="main.js"></script>
+
+</body>
+
+</html>

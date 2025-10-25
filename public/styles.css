@@ -1,0 +1,103 @@
+body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+main {
+  width: 90%;
+  margin: 0 auto;
+}
+
+td,
+th {
+  border: 2px solid black;
+
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  box-shadow: 0 5px gray;
+}
+
+th,
+td {
+  text-align: left;
+}
+
+th,
+button {
+  background-color: rgb(42, 42, 42);
+  color: white;
+}
+
+tr td:nth-child(2){
+ min-width: 10rem;
+}
+
+tr td:nth-child(3),
+tr td:nth-child(4),
+tr td:nth-child(5),
+tr td:nth-child(6) {
+ width: 7rem;
+ min-width: 7rem;
+}
+
+tr td:nth-child(7) {
+ width: 4rem;
+}
+
+thead tr th:last-child {
+  border: none;
+  background-color: white;
+}
+
+input,
+button,
+select {
+  width: 100%;
+  padding: 8px 0;
+  margin: 0;
+  border: none;
+  font-size: 1rem;
+}
+button{
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+select {
+  background-color: transparent;
+}
+
+.priority-low {
+  background-color: rgba(149, 214, 255, 0.466);
+}
+
+.priority-medium {
+  background-color: rgba(239, 227, 7, 0.722);
+}
+
+.priority-high {
+  background-color: rgba(232, 28, 1, 0.73);
+}
+
+.status-opened {
+  background-color: rgba(8, 66, 255, 0.466);
+}
+
+.status-wip {
+  background-color: rgba(239, 169, 7, 0.722);
+}
+
+.status-resolved{
+  background-color:  rgba(35, 195, 3, 0.734);
+}
+
+tr:nth-child(even) {
+  background-color: rgba(117, 117, 117, 0.197);
+}
+
+.delete {
+  text-align: center;
+  font-size: 1.2rem;
+}
