@@ -1,5 +1,5 @@
 ## Description
-A full-stack app for tracking and managing issues. WIP
+A full-stack app for tracking and managing issues.
 
 
 <a href="https://issue-tracker-6eef.onrender.com/" target="_blank" >
